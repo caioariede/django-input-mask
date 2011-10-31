@@ -19,7 +19,7 @@ Or manually place it on your `PYTHON_PATH`.
     from django import forms
     from django.contrib.localflavor.br.forms import BRPhoneNumberField
 
-    from mask_field.contrib.localflavor.br.widgets import BRPhoneNumberInput
+    from input_mask.contrib.localflavor.br.widgets import BRPhoneNumberInput
 
 
     class YourForm(forms.ModelForm):
