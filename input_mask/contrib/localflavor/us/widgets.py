@@ -13,7 +13,7 @@ class USSocialSecurityNumberInput(InputMask):
     }
 
 
-class BRZipCodeInput(InputMask):
+class USZipCodeInput(InputMask):
     mask = {
         'mask': '99999-9999',
     }
