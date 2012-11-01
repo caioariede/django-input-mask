@@ -18,6 +18,6 @@ class InputMask(forms.TextInput):
         return super(InputMask, self).render(name, value, attrs=attrs)
 
     class Media:
-        js = (settings.MEDIA_URL + 'js/jquery.metadata.js',
-              settings.MEDIA_URL + 'js/jquery.meio.mask.min.js',
-              settings.MEDIA_URL + 'js/text_input_mask.js',)
+        js = (settings.STATIC_URL + 'js/jquery.metadata.js',
+              settings.STATIC_URL + 'js/jquery.meio.mask.min.js',
+              settings.STATIC_URL + 'js/text_input_mask.js',)
