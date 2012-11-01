@@ -1,1 +1,2 @@
 recursive-include input_mask/static *
+recursive-include input_mask/ *.py
