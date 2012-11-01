@@ -31,6 +31,17 @@ Add 'input_mask' to your `INSTALLED_APPS`.
     class YourForm(forms.ModelForm):
         phone = BRPhoneNumberField(widget=BRPhoneNumberInput)
 
+**Decimal masks**
+
+    from input_mask.fields import DecimalField
+
+    class MyForm(forms.ModelForm):
+        my_decimal_field = DecimalField(max_digits=10, decimal_places=2)
+        ...
+
+* `input_mask.fields.DecimalField` will automatically handle separators.
+* `input_mask.contrib.localflavor.*.fields.*DecimalField` will use local-based separators.
+
 **Creating your own masks**
 
     from input_mask.widgets import InputMask
@@ -40,16 +51,6 @@ Add 'input_mask' to your `INSTALLED_APPS`.
         mask = {
             'mask': '999-111',
         }
-
-**Decimal masks**
-
-    from input_mask.fields import DecimalField
-
-    class MyForm(forms.ModelForm):
-        my_decimal_field = DecimalField(max_digits=10, decimal_places=2)
-
-* input_mask.fields.DecimalField will automatically handle separators.
-* input_mask.contrib.localflavor.*.fields.*DecimalField will use local-based separators.
 
 For more rules, take a look at [meioMask documentation](http://www.meiocodigo.com/projects/meiomask/).
 
