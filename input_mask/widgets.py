@@ -1,6 +1,9 @@
 from django import forms
 from django.conf import settings
 from django.utils.safestring import mark_safe
+from django.utils.formats import get_format
+
+from json import dumps
 
 from .utils import chunks
 
@@ -14,7 +17,7 @@ __all__ = (
 class InputMask(forms.TextInput):
     def render(self, name, value, attrs=None):
         if hasattr(self, 'mask'):
-            class_ = mark_safe('mask %s' % (self.mask,))
+            class_ = mark_safe('mask %s' % (dumps(self.mask),))
 
             if attrs is None:
                 attrs = {'class': class_}
@@ -37,11 +40,22 @@ class DecimalInputMask(InputMask):
         'defaultValue': '000',
     }
 
+    thousands_sep = get_format('THOUSAND_SEPARATOR')
+    decimal_sep = get_format('DECIMAL_SEPARATOR')
+
     def __init__(self, max_digits=10, decimal_places=2, *args, **kwargs):
         super(DecimalInputMask, self).__init__(*args, **kwargs)
 
+        self.max_digits = max_digits
+        self.decimal_places = decimal_places
+
+    def render(self, *args, **kwargs):
         self.mask['mask'] = '%s%s%s' % (
-            '9' * decimal_places,
+            '9' * self.decimal_places,
             self.decimal_sep,
-            chunks('9' * (max_digits - decimal_places), 3, self.thousands_sep),
+            chunks(
+                '9' * (self.max_digits - self.decimal_places), 3,
+                self.thousands_sep),
         )
+
+        return super(DecimalInputMask, self).render(*args, **kwargs)
