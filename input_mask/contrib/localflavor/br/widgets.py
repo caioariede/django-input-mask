@@ -1,4 +1,7 @@
-from mask_field.widgets import InputMask
+from input_mask.widgets import (
+    InputMask,
+    DecimalInputMask,
+)
 
 
 class BRPhoneNumberInput(InputMask):
@@ -23,3 +26,8 @@ class BRCNPJInput(InputMask):
     mask = {
         'mask': '99.999.999/9999-9',
     }
+
+
+class BRDecimalInput(DecimalInputMask):
+    thousands_sep = '.'
+    decimal_sep = ','

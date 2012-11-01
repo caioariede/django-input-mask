@@ -1,4 +1,7 @@
-from mask_field.widgets import InputMask
+from input_mask.widgets import (
+    InputMask,
+    DecimalInputMask,
+)
 
 
 class USPhoneNumberInput(InputMask):
@@ -17,3 +20,8 @@ class BRZipCodeInput(InputMask):
     mask = {
         'mask': '99999-9999',
     }
+
+
+class USDecimalInput(DecimalInputMask):
+    thousands_sep = ','
+    decimal_sep = '.'
