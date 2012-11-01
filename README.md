@@ -16,7 +16,7 @@ Or manually place it on your `PYTHON_PATH`.
 
 **Configuration**
 
-Add 'input_mask' to your `INSTALLED_APPS`.
+Add `input_mask` to your `INSTALLED_APPS`.
 
 *This is needed so that Django can handle the app's static files*
 
@@ -26,7 +26,6 @@ Add 'input_mask' to your `INSTALLED_APPS`.
     from django.contrib.localflavor.br.forms import BRPhoneNumberField
 
     from input_mask.contrib.localflavor.br.widgets import BRPhoneNumberInput
-
 
     class YourForm(forms.ModelForm):
         phone = BRPhoneNumberField(widget=BRPhoneNumberInput)
@@ -46,7 +45,6 @@ Add 'input_mask' to your `INSTALLED_APPS`.
 
     from input_mask.widgets import InputMask
 
-    
     class MyCustomInput(InputMask):
         mask = {
             'mask': '999-111',
