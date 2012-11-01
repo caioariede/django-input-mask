@@ -1,7 +1,4 @@
-from input_mask.widgets import (
-    InputMask,
-    DecimalInputMask,
-)
+from ....widgets import *
 
 
 class USPhoneNumberInput(InputMask):

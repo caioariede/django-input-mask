@@ -5,6 +5,12 @@ from django.utils.safestring import mark_safe
 from .utils import chunks
 
 
+__all__ = (
+    'InputMask',
+    'DecimalInputMask',
+)
+
+
 class InputMask(forms.TextInput):
     def render(self, name, value, attrs=None):
         if hasattr(self, 'mask'):
