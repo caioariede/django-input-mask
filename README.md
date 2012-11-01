@@ -1,6 +1,6 @@
 **Django Input Mask**
 
-A collection of widgets for applying masks to input elements using JavaScript.
+A collection of easy-to-extend-widgets for applying masks to input elements.
 
 **Requirements**
 
@@ -10,9 +10,15 @@ Note: _We do not include jQuery in this package, you must add it by your hands._
 
 **Installation**
 
-`pip install git+http://github.com/codasus/django-input-mask#egg=input_mask`
+`pip install git+http://github.com/codasus/django-input-mask.git#egg=input_mask`
 
 Or manually place it on your `PYTHON_PATH`.
+
+**Configuration**
+
+Add 'input_mask' to your `INSTALLED_APPS`.
+
+*This is needed so that Django can handle the app's static files*
 
 **Usage**
 
@@ -31,7 +37,9 @@ Or manually place it on your `PYTHON_PATH`.
 
     
     class MyCustomInput(InputMask):
-        mask = '{mask: "999-111"}'
+        mask = {
+            'mask': '999-111',
+        }
 
 
 For more rules, take a look at [meioMask documentation](http://www.meiocodigo.com/projects/meiomask/).
