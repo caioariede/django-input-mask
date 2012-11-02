@@ -17,7 +17,9 @@ __all__ = (
 class InputMask(forms.TextInput):
     def render(self, name, value, attrs=None):
         if hasattr(self, 'mask'):
-            class_ = mark_safe('mask %s' % (dumps(self.mask),))
+            class_ = 'mask %s' % (dumps(self.mask),)
+            class_ = class_.replace('"', '&quot;')
+            class_ = mark_safe(class_)
 
             if attrs is None:
                 attrs = {'class': class_}
