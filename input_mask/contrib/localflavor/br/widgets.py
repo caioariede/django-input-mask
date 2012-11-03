@@ -3,7 +3,7 @@ from ....widgets import *
 
 class BRPhoneNumberInput(InputMask):
     mask = {
-        'mask': '99-9999-9999',
+        'mask': '(99) 9999-9999',
     }
 
 
@@ -15,13 +15,13 @@ class BRZipCodeInput(InputMask):
 
 class BRCPFInput(InputMask):
     mask = {
-        'mask': '999-999-999-99',
+        'mask': '999.999.999-99',
     }
 
 
 class BRCNPJInput(InputMask):
     mask = {
-        'mask': '99.999.999/9999-9',
+        'mask': '99.999.999/9999-99',
     }
 
 
