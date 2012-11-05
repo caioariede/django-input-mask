@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES
 
 
-VERSION = '1.3'
+VERSION = '1.3.1'
 
 
 # Make data go to the right place.

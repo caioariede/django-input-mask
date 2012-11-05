@@ -67,11 +67,16 @@ class DecimalInputMask(InputMask):
                 self.thousands_sep),
         )
 
-        value = numberformat.format(
-            value,
-            self.decimal_sep,
-            decimal_pos=self.decimal_places,
-            thousand_sep=self.thousands_sep,
-        )
+        try:
+            Decimal(value)
+        except DecimalException:
+            pass
+        else:
+            value = numberformat.format(
+                value,
+                self.decimal_sep,
+                decimal_pos=self.decimal_places,
+                thousand_sep=self.thousands_sep,
+            )
 
         return super(DecimalInputMask, self).render(name, value, attrs=attrs)
