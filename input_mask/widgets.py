@@ -1,5 +1,6 @@
 from django import forms
 from django.conf import settings
+from django.utils import numberformat
 from django.utils.safestring import mark_safe
 from django.utils.formats import get_format
 
@@ -52,7 +53,7 @@ class DecimalInputMask(InputMask):
         self.max_digits = max_digits
         self.decimal_places = decimal_places
 
-    def render(self, *args, **kwargs):
+    def render(self, name, value, attrs=None):
         self.mask['mask'] = '%s%s%s' % (
             '9' * self.decimal_places,
             self.decimal_sep,
@@ -61,4 +62,11 @@ class DecimalInputMask(InputMask):
                 self.thousands_sep),
         )
 
-        return super(DecimalInputMask, self).render(*args, **kwargs)
+        value = numberformat.format(
+            value,
+            self.decimal_sep,
+            decimal_pos=self.decimal_places,
+            thousand_sep=self.thousands_sep,
+        )
+
+        return super(DecimalInputMask, self).render(name, value, attrs=attrs)
