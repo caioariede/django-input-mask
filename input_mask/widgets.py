@@ -5,6 +5,7 @@ from django.utils.safestring import mark_safe
 from django.utils.formats import get_format
 
 from json import dumps
+from decimal import Decimal, DecimalException
 
 from .utils import chunks
 
