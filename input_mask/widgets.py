@@ -17,16 +17,17 @@ __all__ = (
 class InputMask(forms.TextInput):
     def render(self, name, value, attrs=None):
         if hasattr(self, 'mask'):
-            class_ = 'mask %s' % (dumps(self.mask),)
-            class_ = class_.replace('"', '&quot;')
-            class_ = mark_safe(class_)
-
-            if attrs is None:
-                attrs = {'class': class_}
-            elif 'class' not in attrs:
-                attrs['class'] = class_
+            if self.mask.get('type') != 'reverse':
+                class_ = 'mask '
             else:
-                attrs['class'] += ' ' + class_
+                class_ = 'mask mask-reverse '
+
+            class_ += dumps(self.mask).replace('"', '&quot;')
+
+            if attrs is not None and 'class' in attrs:
+                class_ = '%s %s' % (attrs['class'], class_)
+
+            attrs['class'] = mark_safe(class_)
 
         return super(InputMask, self).render(name, value, attrs=attrs)
 
