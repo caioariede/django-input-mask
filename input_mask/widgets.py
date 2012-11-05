@@ -16,6 +16,11 @@ __all__ = (
 
 
 class InputMask(forms.TextInput):
+    def __init__(self, *args, **kwargs):
+        mask = kwargs.pop('mask', {})
+        super(InputMask, self).__init__(*args, **kwargs)
+        self.mask.update(mask)
+
     def render(self, name, value, attrs=None):
         if hasattr(self, 'mask'):
             if self.mask.get('type') != 'reverse':
