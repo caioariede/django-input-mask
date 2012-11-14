@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from django.utils.formats import get_format
 
 from json import dumps
-from decimal import Decimal, DecimalException
+from decimal import Decimal
 
 from .utils import chunks
 
@@ -70,7 +70,7 @@ class DecimalInputMask(InputMask):
 
         try:
             Decimal(value)
-        except DecimalException:
+        except:
             pass
         else:
             value = numberformat.format(
