@@ -2,9 +2,14 @@
 
 A collection of easy-to-extend-widgets for applying masks to input elements.
 
+**Compatibility**
+
+* Django 1.4 and 1.5
+* Python 2.7 and Python 3
+
 **Requirements**
 
-* jQuery 1.2.6+
+* jQuery up to 1.8.x version (Not compatible with jQuery 1.9 yet)
 
 Note: _We do not include jQuery in this package, you must add it by your hands._
 
