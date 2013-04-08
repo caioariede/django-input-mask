@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        {{ form.media }}
+    </head>
+    <body>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form }}
+
+            <button type="button"
+                    onclick="$('[id^=id_decimal_field]').val('invalid')">
+                Set invalid value
+            </button>
+
+            <input type="submit" />
+        </form>
+    </body>
+</html>
