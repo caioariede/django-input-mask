@@ -5,7 +5,7 @@ A collection of easy-to-extend-widgets for applying masks to input elements.
 **Compatibility**
 
 * Django 1.4 and 1.5
-* Python 2.7 and Python 3
+* Python 2.7 and 3
 
 **Requirements**
 
