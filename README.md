@@ -9,9 +9,13 @@ A collection of easy-to-extend-widgets for applying masks to input elements.
 
 **Requirements**
 
-* jQuery up to 1.8.x version (Not compatible with jQuery 1.9 yet)
+* jQuery 1.8 or higher
 
-Note: _We do not include jQuery in this package, you must add it by your hands._
+We do not include jQuery in this package, you must add it by your hands.
+
+**Note:**
+*jQuery 1.9 support will be granted through the [jQuery Migrate Plugin](https://github.com/jquery/jquery-migrate).*
+*Just take a look on [example_project/templates/form.html](example_project/example_project/templates/form.html) file for an example.*
 
 **Installation**
 
