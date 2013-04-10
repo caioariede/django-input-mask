@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES
 
 
-VERSION = '1.3.3'
+VERSION = '1.3.4'
 
 
 # Make data go to the right place.
@@ -15,21 +15,30 @@ setup(
     name='django-input-mask',
     version=VERSION,
     description="JavaScript input masks for Django",
-    long_description="This module provides JavaScript input masks for Django projects.",
-    author="Codasus Technologies",
-    author_email="contact@codasus.com",
+    long_description=open('README.rst', 'r').read(),
+    author="Caio Ariede",
+    author_email="caio.ariede@gmail.com",
     url="http://github.com/codasus/django-input-mask",
-    license="Creative Commons Attribution-ShareAlike 3.0 Unported License",
+    license="MIT",
     platforms=["any"],
-    packages=['input_mask'],
+    packages=[
+        'input_mask',
+        'input_mask.contrib',
+        'input_mask.contrib.localflavor',
+        'input_mask.contrib.localflavor.br',
+        'input_mask.contrib.localflavor.us',
+    ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: JavaScript",
         "Framework :: Django",
+        "Topic :: Utilities",
     ],
     include_package_data=True,
 )
