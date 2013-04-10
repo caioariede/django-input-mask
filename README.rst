@@ -24,6 +24,12 @@ We do not include jQuery in this package, you must add it by your hands.
 
   .. code:: bash
 
+  pip install django-input-mask
+
+Or install directly from master branch:
+
+  .. code:: bash
+
    pip install git+http://github.com/codasus/django-input-mask.git#egg=input_mask
 
 Or manually place it on your :code:`PYTHON_PATH`.
