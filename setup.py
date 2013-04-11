@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.command.install import INSTALL_SCHEMES
 
 
-VERSION = '1.3.5'
+VERSION = '1.3.6'
 
 
 # Make data go to the right place.
@@ -18,7 +18,7 @@ setup(
     long_description=open('README.rst', 'r').read(),
     author="Caio Ariede",
     author_email="caio.ariede@gmail.com",
-    url="http://github.com/codasus/django-input-mask",
+    url="http://github.com/caioariede/django-input-mask",
     license="MIT",
     platforms=["any"],
     packages=[

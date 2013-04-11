@@ -30,7 +30,7 @@ Or install directly from master branch:
 
   .. code:: bash
 
-   pip install git+http://github.com/codasus/django-input-mask.git#egg=input_mask
+   pip install git+http://github.com/caioariede/django-input-mask.git#egg=input_mask
 
 Or manually place it on your :code:`PYTHON_PATH`.
 
