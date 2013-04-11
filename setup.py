@@ -40,5 +40,4 @@ setup(
         "Framework :: Django",
         "Topic :: Utilities",
     ],
-    include_package_data=True,
 )
