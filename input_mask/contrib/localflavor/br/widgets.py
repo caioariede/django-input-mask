@@ -3,7 +3,7 @@ from ....widgets import *
 
 class BRPhoneNumberInput(InputMask):
     mask = {
-        'mask': '(99) 9999-9999',
+        'mask': '(99) 999999999',
     }
 
 
