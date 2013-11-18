@@ -39,9 +39,12 @@ class InputMask(forms.TextInput):
         return super(InputMask, self).render(name, value, attrs=attrs)
 
     class Media:
-        js = (settings.STATIC_URL + 'input_mask/js/jquery.metadata.js',
-              settings.STATIC_URL + 'input_mask/js/jquery.meio.mask.min.js',
-              settings.STATIC_URL + 'input_mask/js/text_input_mask.js',)
+        js = (
+            settings.STATIC_URL + 'input_mask/js/jquery.metadata.js',
+            settings.STATIC_URL + 'input_mask/js/jquery.meio.mask.min.js',
+            settings.STATIC_URL + 'input_mask/js/jquery19support.js',
+            settings.STATIC_URL + 'input_mask/js/text_input_mask.js',
+        )
 
 
 class DecimalInputMask(InputMask):
