@@ -5,7 +5,7 @@ from distutils.core import setup
 from distutils.sysconfig import get_python_lib
 
 
-VERSION = '1.3.6'
+VERSION = '1.3.7'
 
 # Warn if we are installing over top of an existing installation. This can
 # cause issues where files that were deleted from a more recent Django are
