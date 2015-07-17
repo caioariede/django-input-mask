@@ -13,7 +13,7 @@ Status
 Compatibility
 -------------
 
-* Django 1.6, 1.7 and 1.8
+* Django 1.7 and 1.8
 * Python 2.7 and 3.x
 
 Requirements
