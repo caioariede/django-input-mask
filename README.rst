@@ -2,12 +2,12 @@
 
 A collection of easy-to-extend-widgets for applying masks to input elements.
 
-MIT licensed
+**MIT License**
 
 **Compatibility**
 
-* Django 1.3, 1.4 and 1.5
-* Python 2.6, 2.7 and 3
+* Django 1.6, 1.7 and 1.8
+* Python 2.7 and 3.x
 
 **Requirements**
 
@@ -32,7 +32,7 @@ Or install directly from master branch:
 
    pip install git+http://github.com/caioariede/django-input-mask.git#egg=input_mask
 
-Or manually place it on your :code:`PYTHON_PATH`.
+Or manually place it on your :code:`PYTHONPATH`.
 
 **Configuration**
 
