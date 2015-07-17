@@ -12,6 +12,7 @@ setup(
     author_email='caio.ariede@gmail.com',
     description='JavaScript input masks for Django',
     license='MIT',
+    zip_safe=False,
     platforms=['any'],
     packages=find_packages(),
     package_data={'input_mask': [
