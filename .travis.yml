@@ -1,12 +1,18 @@
 language: python
-python: 2.7
 sudo: false
-env:
-  - TOX_ENV=py2-Django16
-  - TOX_ENV=py2-Django17
-  - TOX_ENV=py3-Django17
-  - TOX_ENV=py2-Django18
-  - TOX_ENV=py3-Django18
+matrix:
+  include:
+    - python: 2.7
+      env: TOX_ENV=py2-Django16
+  include:
+    - python: 2.7
+      env: TOX_ENV=py2-Django17
+  include:
+    - python: 2.7
+      env: TOX_ENV=py2-Django18
+  include:
+    - python: 3.4
+      env: TOX_ENV=py3-Django18
 install:
   - pip install 'tox>=2'
 script:
