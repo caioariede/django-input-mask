@@ -17,9 +17,16 @@ __all__ = (
 
 
 class InputMask(forms.TextInput):
+    mask = {}
+
     def __init__(self, *args, **kwargs):
         mask = kwargs.pop('mask', {})
+
+        if type(mask) != object:
+            mask = {'mask': mask}
+
         super(InputMask, self).__init__(*args, **kwargs)
+
         self.mask.update(mask)
 
     def render(self, name, value, attrs=None):
