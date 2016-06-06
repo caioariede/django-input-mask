@@ -33,7 +33,11 @@
                 opts = input.attr('data-money-mask').replace(/&quot;/g, '"'),
                 opts = JSON.parse(opts);
 
-            input.maskMoney(opts).maskMoney('mask');
+            input.maskMoney(opts);
+
+            if (opts.allowZero) {
+                input.maskMoney('mask');
+            }
         }
     });
 
