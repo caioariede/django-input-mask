@@ -35,7 +35,7 @@
 
             input.maskMoney(opts);
 
-            if (opts.allowZero) {
+            if (opts.allowZero || input.val() != '') {
                 input.maskMoney('mask');
             }
         }
