@@ -25,6 +25,8 @@
 
             opts.placeholder = input.attr('placeholder');
 
+            // maxlength causes a bug in jquery-maskedinput in android
+            input.removeAttr('maxlength');
             input.mask(mask, opts);
         },
 
