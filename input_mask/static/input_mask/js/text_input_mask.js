@@ -39,6 +39,7 @@
 
             if (opts.allowZero || input.val() != '') {
                 input.maskMoney('mask');
+                input.maskMoney('destroy');
             }
         }
     });
