@@ -1,6 +1,6 @@
 from django import forms
 
-from .utils import mask_cls, money_mask_cls
+from .utils import input_mask, decimal_mask
 
 
 __all__ = (
@@ -9,11 +9,7 @@ __all__ = (
 )
 
 
-InputMask = mask_cls(forms.TextInput)
+InputMask = input_mask(forms.TextInput)
 
-
-class DecimalInputMask(money_mask_cls(forms.TextInput)):
-    mask = {
-        'thousands': '',
-        'allowNegative': True,
-    }
+class DecimalInputMask(decimal_mask(forms.TextInput)):
+    pass

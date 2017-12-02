@@ -1,13 +1,13 @@
 from django.conf import settings
 from django import forms
 
-from .utils import money_mask
+from .utils import money_mask, decimal_mask
 
 
 class DecimalField(forms.DecimalField):
     def __init__(self, max_digits=10, decimal_places=2, *args, **kwargs):
         mask = kwargs.pop('mask', {})
-        self.widget = money_mask(forms.TextInput, mask=mask)
+        self.widget = self.get_widget(mask)
 
         super(DecimalField, self).__init__(*args, **kwargs)
 
@@ -29,6 +29,10 @@ class DecimalField(forms.DecimalField):
 
         return result
 
+    def get_widget(self, mask):
+        return decimal_mask(forms.TextInput, mask=mask)
+
 
 class MoneyField(DecimalField):
-    pass
+    def get_widget(self, mask):
+        return money_mask(forms.TextInput, mask=mask)
