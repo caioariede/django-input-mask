@@ -7,7 +7,6 @@ sys.path.append(os.path.dirname(__file__) + '/../../')
 # Django settings for example_project project.
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -91,13 +90,6 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '-r(ysbp$9(!%9-7z6y3oh8&4i7e6)p5xbrks#$4-d=^m^v)^!-'
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
-
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -113,10 +105,16 @@ ROOT_URLCONF = 'example_project.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'example_project.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+TEMPLATES = (
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['example_project/templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [],
+            'debug': True,
+        },
+    },
 )
 
 INSTALLED_APPS = (
