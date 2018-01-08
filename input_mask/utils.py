@@ -2,6 +2,7 @@ from django.conf import settings
 from django import forms
 
 import json
+import six
 
 
 def mask_cls(widget_cls, js=None, mask=None, data_attrs=None):
@@ -44,7 +45,7 @@ def mask_cls(widget_cls, js=None, mask=None, data_attrs=None):
             return forms.Media(js=self._js)
 
         def _parse_mask_attr(self, mask):
-            if isinstance(mask, basestring):
+            if isinstance(mask, six.string_types):
                 return {'mask': mask}
             return mask
 
